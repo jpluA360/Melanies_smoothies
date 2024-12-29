@@ -10,7 +10,7 @@ st.write(
 
 
 from snowflake.snowpark.functions import col, when_matched
-cnx = st.connections("snowflake")
+cnx = st.connection("snowflake")
 session = cnx.session()
 my_dataframe = session.table("smoothies.public.orders").filter(col("ORDER_FILLED")==0).collect()
 if my_dataframe:    
